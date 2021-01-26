@@ -21,7 +21,7 @@ namespace Taschenrechner2
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            Console.WriteLine(fakultaet(7));
+            Console.WriteLine(fakultaet(9));
         }
     }
 }
