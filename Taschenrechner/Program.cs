@@ -1,4 +1,5 @@
 ﻿using System;
+using MyFacade;
 
 namespace Taschenrechner
 {
@@ -26,8 +27,26 @@ namespace Taschenrechner
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine(Fakultaet(5));
+            while( true)
+            {
+                int zahl = 0;
+                bool ok = false;
+                while( !ok)
+                {
+                    Console.Write("Gib die Zahl ein, von welcher du die Fakultät berechnen möchtetst: ");
+                    try
+                    {
+                        zahl = Extensions.ConsoleReadInt();
+                        ok = true;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("Das ging daneben! Probiers nochmals!");
+                    }
+                }
+                Console.WriteLine(Fakultaet(zahl));
+                Console.WriteLine();
+            }
         }
     }
 }
