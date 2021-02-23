@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Taschenrechner2", "Taschenr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFacade", "MyFacade\MyFacade.csproj", "{3886EA18-8EA4-4CE1-B3B5-C7360C0E913B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFacade2", "MyFacade2\MyFacade2.csproj", "{42E896E1-08C4-488A-9847-A29F7AFBDA42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3886EA18-8EA4-4CE1-B3B5-C7360C0E913B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3886EA18-8EA4-4CE1-B3B5-C7360C0E913B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3886EA18-8EA4-4CE1-B3B5-C7360C0E913B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42E896E1-08C4-488A-9847-A29F7AFBDA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E896E1-08C4-488A-9847-A29F7AFBDA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E896E1-08C4-488A-9847-A29F7AFBDA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E896E1-08C4-488A-9847-A29F7AFBDA42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

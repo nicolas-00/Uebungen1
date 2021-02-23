@@ -6,12 +6,12 @@ namespace Taschenrechner
     class Program
     {
 
-        static double Fakultaet( int basis)
+        static double Fakultaet( double basis)
         {
             double ret = 1.0;
             double factor = 1.0;
 
-            for( int cnt = 0; cnt< basis; cnt++)
+            for( double cnt = 0; cnt< basis; cnt++)
             {
                 ret = ret * factor;
                 factor = factor + 1.0;
@@ -22,26 +22,89 @@ namespace Taschenrechner
 
         static double SquareRoot( double value)
         {
+
             throw new NotImplementedException();
         }
 
-        static void Main(string[] args)
+
+        static void Main()
         {
             while( true)
             {
-                int zahl = 0;
+                Console.WriteLine("Was möchtest du tun?");
+                Console.WriteLine("1: Fakultät berechnen");
+                Console.WriteLine("2: Quadratzahl berechnen");
+                Console.WriteLine("3: Summe berechnen");
+                Console.WriteLine("4: Kreisflaeche berechnen");
+                Console.WriteLine("5: Vierte Potenz berechnen");
+                Console.WriteLine("6: 17-Fache berechnen");
+                Console.Write("Deine Wahl: ");
+                double wahl = Extensions.ConsoleReadInt(true, 1, 6);
+                double zahl = 0;
+                switch ( wahl)
+                {
+                    case 1:
+                        Console.Write("Gib die Zahl ein, von welcher du die Fakultät berechnen möchtetst: ");
+                        zahl = Extensions.ConsoleReadInt(true, 0, 170);
+                        Console.WriteLine(Fakultaet(zahl));
+                        Console.WriteLine();
+                        break;
+                    case 2:
+                        Console.Write("Gib die Zahl ein, von welcher du die Quadratzahl berechnen möchtetst: ");
+                        zahl = Extensions.ConsoleReadInt(true, -50000, 50000);
+                        Console.WriteLine(zahl*zahl);
+                        Console.WriteLine();
+                        break;
+                    case 3:
+                        Console.WriteLine("Gib die Zahl ein, von welcher du die Summe berechnen möchtest: ");
+                        zahl = Extensions.ConsoleReadInt(true, 0, 100000000);
+                        Console.WriteLine(zahl + zahl);
+                        Console.WriteLine();
+                        break;
+                    case 4:
+                        Console.WriteLine("Gib eine Zahl ein, von welcher du die Fläche für einen Kreis berechnen möchtest: ");
+                        zahl = Extensions.ConsoleReadInt(true, 0, 50000);
+                        Console.WriteLine(Math.PI * zahl * zahl);
+                        Console.WriteLine();
+                        break;
+                    case 5:
+                        Console.WriteLine("Gib eine Zahl ein, von welcher du die vierte Potenz berechnen möchtest: ");
+                        zahl = Extensions.ConsoleReadInt(true, 0, 50000);
+                        Console.WriteLine(zahl * zahl * zahl * zahl);
+                        Console.WriteLine();
+                        break;
+                    case 6:
+                        Console.WriteLine("Gib eine Zahl ein, von welcher du das 17-Fache berechnen möchtest: ");
+                        zahl = Extensions.ConsoleReadInt(true, 0, 50000);
+                        Console.WriteLine(zahl * 17);
+                        Console.WriteLine();
+                        break;
+                    default:
+                        throw new Exception("Error");
+                }
+
+            }
+
+        }
+
+        static void Main1(string[] args)
+        {
+            while( true)
+            {
+                double zahl = 0;
                 bool ok = false;
                 while( !ok)
                 {
                     Console.Write("Gib die Zahl ein, von welcher du die Fakultät berechnen möchtetst: ");
-                    try
+                    zahl = Extensions.ConsoleReadInt(true, 0, 170);
+                    //if (zahl > 170)
+                    //{
+                    //    ok = false;
+                    //    Console.WriteLine("Die Zahl ist zu hoch! Probiers nochmals!");
+                    //}
+                    //else
                     {
-                        zahl = Extensions.ConsoleReadInt();
                         ok = true;
-                    }
-                    catch (Exception)
-                    {
-                        Console.WriteLine("Das ging daneben! Probiers nochmals!");
                     }
                 }
                 Console.WriteLine(Fakultaet(zahl));
